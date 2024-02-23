@@ -22,8 +22,3 @@ resource "aws_instance" "jenkins_instance" {
               sudo systemctl enable jenkins
               EOF
 }
-
-
-output "jenkins_server_ip" {
-  value = aws_instance.jenkins_instance.public_ip
-}
