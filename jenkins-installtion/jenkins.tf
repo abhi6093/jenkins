@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_instance" "jenkins_instance" {
   ami           = "ami-05ff0b3a7128cd6f8"
   instance_type = "t2.micro"
-  key_name      = "osaka-key"
+  key_name      = "mumbai-key"
   vpc_security_group_ids = ["sg-073f05c381f739f69"]
   tags = {
     Name = "jenkins_instance"
