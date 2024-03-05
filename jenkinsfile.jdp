@@ -13,9 +13,9 @@ pipeline {
         }
         stage('Test'){
             steps {
-                mvn sonar:sonar 
-                -Dsonar.projectKey=student-app 
-                -Dsonar.host.url=http://3.110.120.143:9000 
+                mvn sonar:sonar /
+                -Dsonar.projectKey=student-app / 
+                -Dsonar.host.url=http://3.110.120.143:9000  / 
                 -Dsonar.login=d2e9dc026886059aba5b0ab062e4219fda22e5d4
             }
         }
