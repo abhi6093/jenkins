@@ -19,6 +19,13 @@ pipeline {
                 -Dsonar.login=d2e9dc026886059aba5b0ab062e4219fda22e5d4
             }
         }
+           stage('Test'){
+            steps {
+                withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonar-creds') {
+                    sh '/opt/maven/bin/mvn sonar:sonar'
+                }
+            }
+        }
         stage('Deploy'){
             steps {
                 echo '"deploy successfull"'
