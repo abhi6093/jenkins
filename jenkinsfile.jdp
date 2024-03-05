@@ -26,8 +26,13 @@ pipeline {
                 }
           }
       }
-    
-        stage('Deploy'){
+            stage('Quality-Gate'){
+            steps {
+                timeout(10) {
+                    waitForQualityGate abortPipeline: true
+                }   
+            }
+           stage('Deploy'){
             steps {
                 echo '"deploy successfull"'
             }
