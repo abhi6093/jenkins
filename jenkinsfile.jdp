@@ -19,10 +19,10 @@ pipeline {
                 }
             }
         }
-        
+
      stage('Deploy'){
             steps {
-                echo 'Deploy successfull'
+                echo 'deploy successfull'
             }
         }
 }
