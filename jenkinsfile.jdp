@@ -18,12 +18,13 @@ pipeline {
                 echo 'test successfull'
                 }
             }
-        }
 
      stage('Deploy'){
             steps {
                 echo 'deploy successfull'
             }
         }
+   }
 }
+
 
