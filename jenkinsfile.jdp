@@ -13,11 +13,21 @@ pipeline {
             }
         }
 
-     stage('Test'){
+    // stage('Test'){
+    //        steps {
+    //            mvn sonar:sonar \
+    //            -Dsonar.projectKey=studentapp1 \
+    //            -Dsonar.host.url=http://13.233.74.10:9000 \
+    //            -Dsonar.login=41ab23551a67df53a9c080f7411f241a1a6455c2
+    //            }
+    //        }
+       stage('Test'){
             steps {
-                echo 'test successfull'
+                withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonar-creds') {
+                    sh '/opt/maven/bin/mvn sonar:sonar'
                 }
             }
+        }
 
      stage('Deploy'){
             steps {
